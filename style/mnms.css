@@ -1,0 +1,105 @@
+body {
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      background-size:cover;
+      font-family: 'Century Gothic';
+      background-color: blue;
+}
+/*-----------Registration-----------*/
+#main{
+  margin:auto;
+  left: 0px;
+  right: 0px;
+}
+#menu{
+  position: fixed;
+  background-color: black;
+  color: white;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-width: 3 px;
+  border-style: solid;
+  border-color: red;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+
+}
+#menu a{
+  color: white;
+  text-decoration: none;
+}
+#menu a:visited{
+  color: white;
+}
+#menu a:hover{
+  color: grey;
+}
+#sign_menu{
+  float: right;
+}
+#pages{
+  float: left;
+}
+#mnms_content{
+  margin-top: 100px;
+  width: 1000px;
+  background-color: green;
+}
+#footer{
+  position: fixed;
+  background-color: black;
+  color: white;
+  bottom: 0px;
+  text-align: center;
+  margin-bottom: 0px;
+  border-width: 3 px;
+  border-style: solid;
+  border-color: red;
+  right: 0px;
+  left: 0px;
+}
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+#footer a:visited{
+  color: white;
+}
+#footer a:hover{
+  color: grey;
+}
+#pet{
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  top: 0px;
+  float: left;
+  margin: 20px;
+  margin-top: 0px;
+}
+#svi{
+  width: 200px;
+  height: 200px;
+  background-color: lime;
+  top: 0px;
+  margin: 20px;
+}
+#uha{
+  width: 200px;
+  height: 200px;
+  float: right;
+  background-color: red;
+  top: 0px;
+  margin: 20px;
+  margin-top: -220px;
+}
+#mnms_content img{
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+
+
+
