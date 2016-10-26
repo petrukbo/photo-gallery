@@ -1,10 +1,12 @@
 <?php
+session_start();
+if ($_SESSION['id']) header("location:room.php");
 include "User.php";
 $user = new User();
 
 if (isset($_POST['registr']))
 {
-	$reg = $user->registration($_POST['s2'],$_POST['s4'],$_POST['s3'],$_POST['s1'],$_POST['s5'],$path);
+	$reg = $user->registration($_POST['s2'],$_POST['s4'],$_POST['s3'],$_POST['s1'],$_POST['s5']);
 }
 ?>
 
@@ -25,19 +27,11 @@ if (isset($_POST['registr']))
 <!--****************************************************************************-->	
 <div id="menu">
 	<div id="pages">
-	<a href="index.php">Home</a>|
-	<a href="gallery.php">Gallery</a>|
-	<a href="">My room</a>|
-	<a href="reg.php">Reg</a>|
-	<a href="photo.php">Photo</a>
+		<a href="index.php">Home</a>|
+		<a href="gallery.php">Gallery</a>|
+		<a href="reg.php">Reg</a>|
+		<a href="photo.php">Photo</a>
 	</div>
-	<div id="sign_menu">
-	<input type="text" id="signin" name="s1" placeholder="Login">
-	<input type="text" id="signin2" name="s2" placeholder="Password">
-	<input type="submit" name="submit1" value="Sign In">
-		
-	</div>
-	
 </div>
 <!--****************************************************************************-->
 <div id="reg_content" align="center">
@@ -45,23 +39,23 @@ if (isset($_POST['registr']))
 	<table>
 		<tr>
 			<td>Name</td>
-			<td><input type="text" name="s1" placeholder="Name"></td>
+			<td><input type="text" name="s1" placeholder="Name" required></td>
 		</tr>
 		<tr>
 			<td>Login</td>
-			<td><input type="text" name="s2" placeholder="Login"></td>
+			<td><input type="text" name="s2" placeholder="Login" required></td>
 		</tr>
 		<tr>
 			<td>E-mail</td>
-			<td><input type="text" name="s3" placeholder="E-mail"></td>
+			<td><input type="text" name="s3" placeholder="E-mail" required></td>
 		</tr>
 		<tr>
 			<td>Password</td>
-			<td><input type="password" name="s4" placeholder="Password"></td>
+			<td><input type="password" name="s4" placeholder="Password" required></td>
 		</tr>
 		<tr>
 			<td>Country</td>
-			<td><input type="text" name="s5" placeholder="Country"></td>
+			<td><input type="text" name="s5" placeholder="Country" required></td>
 		</tr>
 		<tr>
 			<td></td>

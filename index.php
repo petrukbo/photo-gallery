@@ -1,3 +1,15 @@
+<?php
+session_start();
+include "User.php";
+$user = new User();
+if ($_SESSION['id']) $uid = $_SESSION['id'];
+if (isset($_POST['submit1']))
+{
+	$login = $user->login($_POST['s1'],$_POST['s2']);
+	header("location:room.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +31,22 @@
 	<div id="pages">
 	<a href="index.php">Home</a>|
 	<a href="gallery.php">Gallery</a>|
-	<a href="">My room</a>|
 	<a href="reg.php">Reg</a>|
 	<a href="photo.php">Photo</a>
 	</div>
-	<div id="sign_menu">
-	<input type="text" id="signin" name="s1" placeholder="Login">
-	<input type="text" id="signin2" name="s2" placeholder="Password">
-	<input type="submit" name="submit1" value="Sign In">
-		
-	</div>
-	
+<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<?php if (!$_SESSION['id']) { ?>
+		<form id = "sign_menu" method = "post" >
+			<input type = "text" name = "s1" placeholder = "Login" >
+			<input type = "password" name = "s2" placeholder = "Password" >
+			<input type = "submit" name = "submit1" value = "Sign In" >
+		</form >
+	<?php } else { ?>
+		<form id = "sign_menu" method = "post" >
+			<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+		</form >
+	<?php } ?>
+<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 </div>
 <!--****************************************************************************-->
 <div id="main_content" >
