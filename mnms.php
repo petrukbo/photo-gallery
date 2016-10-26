@@ -2,45 +2,51 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Main</title>
+	<title>M&M's</title>
 	<link rel="stylesheet" href="style\main.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<script src="script\jquery-1.11.3.js"></script>
 	<script src="script\jquery-ui.js"></script>
 	<script src="script\main.js"></script>
 	<script src="script\jQuery.scrollSpeed.js"></script>
-
-
 </head>
 <body background="ptrn1.jpg">
 <div id="main" align="center">
 <!--****************************************************************************-->	
 <div id="menu">
 	<div id="pages">
-	<a href="index.html">Home</a>|
-	<a href="gallery.html">Gallery</a>|
+	<a href="index.php">Home</a>|
+	<a href="gallery.php">Gallery</a>|
 	<a href="">My room</a>|
-	<a href="reg.html">Reg</a>|
-	<a href="admin.html">Admin</a>|
-	<a href="photo.html">Photo</a>
+	<a href="reg.php">Reg</a>|
+	<a href="photo.php">Photo</a>
 	</div>
 	<div id="sign_menu">
-	<input type="text" id="signin" name="s1" placeholder="Login">
-	<input type="text" id="signin2" name="s2" placeholder="Password">
+	<input type="text" id="log" name="login" placeholder="Login">
+	<input type="text" id="pas" name="passw" placeholder="Password">
 	<input type="submit" name="submit1" value="Sign In">
 		
 	</div>
 	
 </div>
 <!--****************************************************************************-->
-<div id="photo_content" >
-	<div class="prev"><br><br><br><br><br><br><h1>◄</h1></div>
-	<div class="next"><br><br><br><br><br><br><h1>►</h1></div>
-	<div class="ph_img">
-		<img src="img\4.jpg">
-	</div>
-</div>
-
+<div id="mnms_content" align="center">
+	
+	
+	<h1>M&M's</h1>
+	<table>
+		<tr>
+			<td><img src="img\morda1.jpg"></td>
+			<td><img src="img\morda2.jpg"></td>
+			<td><img src="img\morda3.jpg"></td>
+		</tr>
+		<tr>
+			<td>TeamLead</td>
+			<td>Designer</td>
+			<td>Tester</td>
+		</tr>
+	</table>
+	
 
 </div>
 <!--****************************************************************************-->
@@ -48,7 +54,8 @@
 
 </div>
 <div id="footer" align="center">
-	<a href="mnms.html">M&M's</a>
+	<a href="mnms.php">M&M's</a>
 </div>
+	
 </body>
 </html>

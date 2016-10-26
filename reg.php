@@ -1,3 +1,13 @@
+<?php
+include "User.php";
+$user = new User();
+
+if (isset($_POST['registr']))
+{
+	$reg = $user->registration($_POST['s2'],$_POST['s4'],$_POST['s3'],$_POST['s1'],$_POST['s5'],$path);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +25,11 @@
 <!--****************************************************************************-->	
 <div id="menu">
 	<div id="pages">
-	<a href="index.html">Home</a>|
-	<a href="gallery.html">Gallery</a>|
+	<a href="index.php">Home</a>|
+	<a href="gallery.php">Gallery</a>|
 	<a href="">My room</a>|
-	<a href="reg.html">Reg</a>|
-	<a href="admin.html">Admin</a>|
-	<a href="photo.html">Photo</a>
+	<a href="reg.php">Reg</a>|
+	<a href="photo.php">Photo</a>
 	</div>
 	<div id="sign_menu">
 	<input type="text" id="signin" name="s1" placeholder="Login">
@@ -32,39 +41,34 @@
 </div>
 <!--****************************************************************************-->
 <div id="reg_content" align="center">
-	<div id="reg">
+	<form method="post" id="reg">
 	<table>
 		<tr>
 			<td>Name</td>
-			<td><input type="text" id="signin_mame" name="s1" placeholder="Name"></td>
+			<td><input type="text" name="s1" placeholder="Name"></td>
 		</tr>
 		<tr>
 			<td>Login</td>
-			<td><input type="text" id="signin_login" name="s2" placeholder="Login"></td>
+			<td><input type="text" name="s2" placeholder="Login"></td>
 		</tr>
 		<tr>
 			<td>E-mail</td>
-			<td><input type="text" id="signin_mail" name="s3" placeholder="E-mail"></td>
+			<td><input type="text" name="s3" placeholder="E-mail"></td>
 		</tr>
 		<tr>
 			<td>Password</td>
-			<td><input type="text" id="signin_password" name="s4" placeholder="Password"></td>
+			<td><input type="password" name="s4" placeholder="Password"></td>
 		</tr>
 		<tr>
 			<td>Country</td>
-			<td><input type="text" id="signin_country" name="s5" placeholder="Country"></td>
-		</tr>
-		<tr>
-			<td>File</td>
-			<td><input type="text" id="img_file" name="s6" placeholder="File"></td>
-			<td><input type="submit" id="choose_img" value="File"></td>
+			<td><input type="text" name="s5" placeholder="Country"></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td><input type="submit" name="registr" value="Registration"></td>
 		</tr>
 	</table>
-	</div>
+	</form>
 
 </div>
 <!--****************************************************************************-->
@@ -72,7 +76,7 @@
 
 </div>
 <div id="footer" align="center">
-	<a href="mnms.html">M&M's</a>
+	<a href="mnms.php">M&M's</a>
 </div>
 	
 </body>

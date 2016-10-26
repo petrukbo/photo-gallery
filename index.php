@@ -17,12 +17,11 @@
 <!--****************************************************************************-->	
 <div id="menu">
 	<div id="pages">
-	<a href="index.html">Home</a>|
-	<a href="gallery.html">Gallery</a>|
+	<a href="index.php">Home</a>|
+	<a href="gallery.php">Gallery</a>|
 	<a href="">My room</a>|
-	<a href="reg.html">Reg</a>|
-	<a href="admin.html">Admin</a>|
-	<a href="photo.html">Photo</a>
+	<a href="reg.php">Reg</a>|
+	<a href="photo.php">Photo</a>
 	</div>
 	<div id="sign_menu">
 	<input type="text" id="signin" name="s1" placeholder="Login">
@@ -77,7 +76,7 @@
 
 </div>
 <div id="footer" align="center">
-	<a href="mnms.html">M&M's</a>
+	<a href="mnms.php">M&M's</a>
 </div>
 </body>
 </html>
