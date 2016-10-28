@@ -69,7 +69,7 @@ if (isset($_POST['exit']))
     <!--****************************************************************************-->
     <div id="content" align="center">
         <form method="post">
-            <table>
+            <!-- <table>
                 <tr>
                     <td>Name:</td>
                     <td><?php echo $user->getName($uid)?></td>
@@ -86,53 +86,48 @@ if (isset($_POST['exit']))
                     <td>Country:</td>
                     <td><?php echo $user->getCountry($uid)?></td>
                 </tr>
-            </table>
-
+            </table> -->
+        <div id="inf_table">
             <table>
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" name="name" placeholder="Name"></td>
+                    <td><input type="text" name="name" placeholder="Name" value=<?php echo $user->getName($uid)?>></td>
                 </tr>
                 <tr>
                     <td>Login</td>
-                    <td><input type="text" name="login" placeholder="Login"></td>
+                    <td><input type="text" name="login" placeholder="Login" value=<?php echo $user->getLogin($uid)?>></td>
                 </tr>
                 <tr>
                     <td>E-mail</td>
-                    <td><input type="text" name="email" placeholder="E-mail"></td>
+                    <td><input type="text" name="email" placeholder="E-mail" value=<?php echo $user->getEmail($uid)?>></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password" placeholder="Password"></td>
+                    <td><input type="password" name="password" placeholder="Password" value=<?php echo $user->getPassword($uid)?>></td>
                 </tr>
                 <tr>
                     <td>Country</td>
-                    <td><input type="text" name="country" placeholder="Country"></td>
+                    <td><input type="text" name="country" placeholder="Country" value=<?php echo $user->getCountry($uid)?>></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" name="delete" value="Delete"></td>
-                    <td><input type="submit" name="edit" value="Edit"></td>
-                    <td><input type="submit" name="exit" value="Exit"></td>
+                    <td><input id="editbut" type="submit" name="edit" value="Edit"></td>
                 </tr>
             </table>
+            </div>
         </form>
-<!--        <div id="ph">-->
-<!--            <img src="img\1.jpg" alt="">-->
-<!--            <img src="img\2.jpg" alt="">-->
-<!--            <img src="img\3.jpg" alt="">-->
-<!--            <img src="img\4.jpg" alt="">-->
-<!--            <img src="img\5.jpg" alt="">-->
-<!--            <img src="img\6.jpg" alt="">-->
-<!--            <img src="img\7.jpg" alt="">-->
-<!--            <img src="img\8.jpg" alt="">-->
-<!--            <img src="img\9.jpg" alt="">-->
-<!--        </div>-->
-
+    </div>
+    <div id="img_content">
+        <h3>Photos</h3>
+        <div><img src="img\1.jpg" alt=""></div>
+        <div><img src="img\2.jpg" alt=""></div>
+        <div><img src="img\3.jpg" alt=""></div>
     </div>
     <!--****************************************************************************-->
 </div>
 <div id="footer">
+    <form id="formdel" method="post"><input type="submit" name="delete" value="Delete page"></form>
     <a href="mnms.php">M&M's</a>
+    <form id="formex" method="post"><input type="submit" name="exit" value="Exit"></form>
 </div>
 
 </body>
