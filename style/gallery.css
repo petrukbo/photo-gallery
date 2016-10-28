@@ -11,6 +11,7 @@ body {
   margin:auto;
   left: 0px;
   right: 0px;
+  color: white;
 }
 #menu{
   position: fixed;
@@ -19,9 +20,9 @@ body {
   padding: 4px;
   padding-left: 10px;
   padding-right: 10px;
-  border-width: 3 px;
+  border-width: 3px;
   border-style: solid;
-  border-color: red;
+  border-color: grey;
   right: 0px;
   left: 0px;
   top: 0px;
@@ -47,15 +48,26 @@ body {
   width: 1000px;
   background: rgba(10,10,10, 0.85);
   margin-top: 30px;
+  height: 200px;
+}
+#img_content{
+  width: 1000px;
+  background: rgba(10,10,10, 0.85);
+  margin-top: 30px;
+}
+#img_content img{
+  width: 800px;
 }
 #content h3{
   margin-top: 20px;x
 }
-#ph img{
-  width: 70%;
-  margin: 20px;
+#inf_table{
+  background-color: grey;
+  width: 300px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px;
 }
-
 #footer{
   position: fixed;
   background-color: black;
@@ -65,7 +77,7 @@ body {
   margin-bottom: 0px;
   border-width: 3 px;
   border-style: solid;
-  border-color: red;
+  border-color: grey;
   right: 0px;
   left: 0px;
 }
@@ -79,5 +91,29 @@ body {
 #footer a:hover{
   color: grey;
 }
+#formex{
+  float: right;
+}
+#formdel{
+  float: left;
+}
+#editbut{
+  background-color: grey;
+  border-style: solid;
 
+}
+#editbut:hover{
+  background-color: white;
+  color: black;
+  
+}
+#footer input{
+  color: white;
+  background-color: black;
+  border-style: none;
+  font-size: 110%;
+}
+#footer input:hover{
+  background-color: grey;
+}
 
