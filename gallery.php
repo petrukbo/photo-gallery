@@ -41,7 +41,11 @@ if (isset($_POST['submit1']))
 		</form >
 	<?php } else { ?>
 		<form id = "sign_menu" method = "post" >
-			<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php if ($_SESSION['id'] != 1) { ?>
+				<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } else {?>
+				<a href="admin.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } ?>
 		</form >
 	<?php } ?>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -60,8 +64,6 @@ if (isset($_POST['submit1']))
 		<img src="img\8.jpg" alt="">
 		<img src="img\9.jpg" alt="">
 	</div>
-	
-
 </div>
 <!--****************************************************************************-->
 </div>

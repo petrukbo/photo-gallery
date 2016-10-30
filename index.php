@@ -43,7 +43,11 @@ if (isset($_POST['submit1']))
 		</form >
 	<?php } else { ?>
 		<form id = "sign_menu" method = "post" >
-			<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php if ($_SESSION['id'] != 1) { ?>
+				<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } else {?>
+				<a href="admin.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } ?>
 		</form >
 	<?php } ?>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
