@@ -2,20 +2,29 @@
 session_start();
 include "User.php";
 $user = new User();
-if ($_SESSION['id']) $uid = $_SESSION['id'];
+if ($_SESSION['id']) $uid = $_SESSION['id']; else header("location:reg.php");
+if ($_SESSION['id'] != 1) header("location:room.php");
 if (isset($_POST['submit1']))
 {
 	$login = $user->login($_POST['s1'],$_POST['s2']);
 	header("location:room.php");
 }
+
+if (isset($_POST['exit']))
+{
+	session_destroy();
+	header("location:index.php");
+}
+
+$users_count = $user->count_users();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Gallery</title>
-	<link rel="stylesheet" href="style\gallery.css">
+	<title>Main</title>
+	<link rel="stylesheet" href="style\main.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<script src="script\jquery-1.11.3.js"></script>
 	<script src="script\jquery-ui.js"></script>
@@ -51,28 +60,55 @@ if (isset($_POST['submit1']))
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 </div>
 <!--****************************************************************************-->
-<div id="content" align="center">
-<h3>Gallery</h3>
-	<div id="ph">
-		<img src="img\1.jpg" alt="">
-		<img src="img\2.jpg" alt="">
-		<img src="img\3.jpg" alt="">
-		<img src="img\4.jpg" alt="">
-		<img src="img\5.jpg" alt="">
-		<img src="img\6.jpg" alt="">
-		<img src="img\7.jpg" alt="">
-		<img src="img\8.jpg" alt="">
-		<img src="img\9.jpg" alt="">
+<div id="admin_content" align="center">
+	<div class="avatar">
+		<img src="img\morda3.jpg">
 	</div>
+	<div class="inf_about">
+		<table border="4" cellspacing="50">
+			<tr>
+				<td>Name</td>
+				<td><?php echo $user->getName($uid) ?></td>
+			</tr>
+			<tr>
+				<td>Login</td>
+				<td><?php echo $user->getLogin($uid) ?></td>
+			</tr>
+			<tr>
+				<td>E-mail</td>
+				<td><?php echo $user->getEmail($uid) ?></td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><?php echo $user->getCountry($uid) ?></td>
+			</tr>
+		</table>
+		<form method="post">
+			<input type="submit" name="exit" value="Exit">
+		</form>
+	</div>
+	<br>
+	<div class="photos">
+		<table>
+			<?php for ($i = 2; $i <=$users_count; $i++) {?>
+				<tr>
+					<td align="center"><?php echo $user->getLogin($i)?></td>
+					<td align="center"><?php echo $user->getName($i)?></td>
+					<td align="center"><?php echo $user->getEmail($i)?></td>
+					<td align="center"><?php echo $user->getCountry($i)?></td>
+				</tr>
+			<?php } ?>
+		</table>
+	</div>
+
 </div>
 <!--****************************************************************************-->
+
+
 </div>
-<div id="footer">
+<div id="footer" align="center">
 	<a href="mnms.php">M&M's</a>
-
 </div>
-
-
 	
 </body>
 </html>
