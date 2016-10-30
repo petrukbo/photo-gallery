@@ -89,6 +89,41 @@ class User
         $sql="DELETE FROM user WHERE id='$uid'";
         mysqli_query($this->data,$sql);
     }
+
+    public function count_users()
+    {
+        $sql="SELECT * FROM user";
+        $check = $this->data->query($sql);
+        $count_row=$check->num_rows;
+        return $count_row;
+    }
+
+    public function add_photo($image,$id_user)
+    {
+        $image = "img/".$_FILES["image"]["name"];
+        $sql1="INSERT INTO picture SET path='$image', id_creator='$id_user'";
+        move_uploaded_file($_FILES["image"]["tmp_name"], $image);
+        $result = mysqli_query($this->data,$sql1);
+        return $result;
+    }
+
+    public function get_picture($uid)
+    {
+        $arr = array();
+        $data = $this->data;
+        $data->query( "SET NAMES UTF8" );
+        $statement = $data->prepare("SELECT path FROM picture WHERE id_creator = '$uid'");
+        $statement->execute();
+        $statement->bind_result($path);
+        while ($statement->fetch()){
+            $line = new stdClass;
+            $line->path = $path;
+
+            $arr[] = $line;
+        }
+        $statement->close();
+        return $arr;
+    }
 }
 
 ?>
