@@ -59,7 +59,11 @@ body {
   margin-top: 30px;
   height: 200px;
 }
+<<<<<<< HEAD
 #content #ph img{
+=======
+#content img{
+>>>>>>> master
   width: 800px;
 }
 #img_content{
