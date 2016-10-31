@@ -29,8 +29,7 @@ if (isset($_POST['submit1']))
 	<div id="pages">
 		<a href="index.php">Home</a>|
 		<a href="gallery.php">Gallery</a>|
-		<a href="reg.php">Reg</a>|
-		<a href="photo.php">Photo</a>
+		<a href="reg.php">Reg</a>
 	</div>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 	<?php if (!$_SESSION['id']) { ?>
@@ -52,18 +51,16 @@ if (isset($_POST['submit1']))
 </div>
 <!--****************************************************************************-->
 <div id="content" align="center">
-<h3>Gallery</h3>
-	<div id="ph">
-		<img src="img\1.jpg" alt="">
-		<img src="img\2.jpg" alt="">
-		<img src="img\3.jpg" alt="">
-		<img src="img\4.jpg" alt="">
-		<img src="img\5.jpg" alt="">
-		<img src="img\6.jpg" alt="">
-		<img src="img\7.jpg" alt="">
-		<img src="img\8.jpg" alt="">
-		<img src="img\9.jpg" alt="">
-	</div>
+	<h3>Gallery</h3>
+		<div id="ph">
+			<?php
+			$pictures = $user->get_picture(0);
+			foreach ($pictures as $pic)
+			{
+			?>
+			<img src=<?php print $pic->path ?> alt="">
+			<?php } ?>
+		</div>
 </div>
 <!--****************************************************************************-->
 </div>

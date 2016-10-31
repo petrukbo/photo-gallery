@@ -55,8 +55,7 @@ if (isset($_POST['addFile']))
         <div id="pages">
             <a href="index.php">Home</a>|
             <a href="gallery.php">Gallery</a>|
-            <a href="reg.php">Reg</a>|
-            <a href="photo.php">Photo</a>
+            <a href="reg.php">Reg</a>
         </div>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <?php if (!$_SESSION['id']) { ?>
@@ -77,7 +76,7 @@ if (isset($_POST['addFile']))
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     </div>
 <!--****************************************************************************-->
-    <div id="content" align="center">
+    <div class="content" align="center">
         <form method="post" enctype="multipart/form-data">
             <div id="inf_table">
                 <table>
@@ -117,7 +116,9 @@ if (isset($_POST['addFile']))
         foreach($pictures as $pic)
         {
         ?>
-            <div><img src=<?php print $pic->path ?> alt=""></div>
+            <div>
+                <img src=<?php print $pic->path ?> alt="">
+            </div>
         <?php } ?>
     </div>
 

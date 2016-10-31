@@ -34,8 +34,7 @@ if (isset($_POST['registr']))
 	<div id="pages">
 		<a href="index.php">Home</a>|
 		<a href="gallery.php">Gallery</a>|
-		<a href="reg.php">Reg</a>|
-		<a href="photo.php">Photo</a>
+		<a href="reg.php">Reg</a>
 	</div>
 </div>
 <!--****************************************************************************-->
