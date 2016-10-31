@@ -38,8 +38,7 @@ $users_count = $user->count_users();
 	<div id="pages">
 		<a href="index.php">Home</a>|
 		<a href="gallery.php">Gallery</a>|
-		<a href="reg.php">Reg</a>|
-		<a href="photo.php">Photo</a>
+		<a href="reg.php">Reg</a>
 	</div>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 	<?php if (!$_SESSION['id']) { ?>

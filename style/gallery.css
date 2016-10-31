@@ -48,7 +48,19 @@ body {
   width: 1000px;
   background: rgba(10,10,10, 0.85);
   margin-top: 30px;
+  /*height: 200px;*/
+}
+#content{
+  margin-top: 35px;
+}
+.content{
+  width: 1000px;
+  background: rgba(10,10,10, 0.85);
+  margin-top: 30px;
   height: 200px;
+}
+#content #ph img{
+  width: 800px;
 }
 #img_content{
   width: 1000px;

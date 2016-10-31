@@ -112,7 +112,11 @@ class User
         $arr = array();
         $data = $this->data;
         $data->query( "SET NAMES UTF8" );
-        $statement = $data->prepare("SELECT path FROM picture WHERE id_creator = '$uid'");
+        if ($uid != 0)
+        {
+            $statement = $data->prepare("SELECT path FROM picture WHERE id_creator = '$uid'");
+        }
+        else $statement = $data->prepare("SELECT path FROM picture");
         $statement->execute();
         $statement->bind_result($path);
         while ($statement->fetch()){
