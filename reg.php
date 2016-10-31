@@ -7,6 +7,11 @@ $user = new User();
 if (isset($_POST['registr']))
 {
 	$reg = $user->registration($_POST['s2'],$_POST['s4'],$_POST['s3'],$_POST['s1'],$_POST['s5']);
+	if ($reg)
+	{
+		$login = $user->login($_POST['s2'],$_POST['s4']);
+		header("location:room.php");
+	}
 }
 ?>
 
@@ -29,8 +34,7 @@ if (isset($_POST['registr']))
 	<div id="pages">
 		<a href="index.php">Home</a>|
 		<a href="gallery.php">Gallery</a>|
-		<a href="reg.php">Reg</a>|
-		<a href="photo.php">Photo</a>
+		<a href="reg.php">Reg</a>
 	</div>
 </div>
 <!--****************************************************************************-->

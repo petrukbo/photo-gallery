@@ -29,10 +29,9 @@ if (isset($_POST['submit1']))
 <!--****************************************************************************-->	
 <div id="menu">
 	<div id="pages">
-	<a href="index.php">Home</a>|
-	<a href="gallery.php">Gallery</a>|
-	<a href="reg.php">Reg</a>|
-	<a href="photo.php">Photo</a>
+		<a href="index.php">Home</a>|
+		<a href="gallery.php">Gallery</a>|
+		<a href="reg.php">Reg</a>
 	</div>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 	<?php if (!$_SESSION['id']) { ?>
@@ -43,7 +42,11 @@ if (isset($_POST['submit1']))
 		</form >
 	<?php } else { ?>
 		<form id = "sign_menu" method = "post" >
-			<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php if ($_SESSION['id'] != 1) { ?>
+				<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } else {?>
+				<a href="admin.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } ?>
 		</form >
 	<?php } ?>
 <!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->

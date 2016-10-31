@@ -29,10 +29,9 @@ if (isset($_POST['submit1']))
 	<div id="pages">
 		<a href="index.php">Home</a>|
 		<a href="gallery.php">Gallery</a>|
-		<a href="reg.php">Reg</a>|
-		<a href="photo.php">Photo</a>
+		<a href="reg.php">Reg</a>
 	</div>
-	<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 	<?php if (!$_SESSION['id']) { ?>
 		<form id = "sign_menu" method = "post" >
 			<input type = "text" name = "s1" placeholder = "Login" >
@@ -41,10 +40,14 @@ if (isset($_POST['submit1']))
 		</form >
 	<?php } else { ?>
 		<form id = "sign_menu" method = "post" >
-			<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php if ($_SESSION['id'] != 1) { ?>
+				<a href="room.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } else {?>
+				<a href="admin.php"><?php echo $user->getLogin($uid)?></a>
+			<?php } ?>
 		</form >
 	<?php } ?>
-	<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 </div>
 <!--****************************************************************************-->
 <div id="mnms_content" align="center">
