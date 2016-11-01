@@ -13,6 +13,10 @@ if (isset($_POST['registr']))
 		header("location:room.php");
 	}
 }
+if (isset($_POST['test']))
+{
+	header ("location:test.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +68,10 @@ if (isset($_POST['registr']))
 		<tr>
 			<td></td>
 			<td><input type="submit" name="registr" value="Registration"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="test" value="test"></td>
 		</tr>
 	</table>
 	</form>
