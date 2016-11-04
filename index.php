@@ -8,6 +8,12 @@ if (isset($_POST['submit1']))
 	$login = $user->login($_POST['s1'],$_POST['s2']);
 	header("location:room.php");
 }
+
+if (isset($_POST['test']))
+	{
+		header("location:test.php");
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +45,7 @@ if (isset($_POST['submit1']))
 			<input type = "text" name = "s1" placeholder = "Login" >
 			<input type = "password" name = "s2" placeholder = "Password" >
 			<input type = "submit" name = "submit1" value = "Sign In" >
+			<input type = "submit" name = "test" value = "Test" >
 		</form >
 	<?php } else { ?>
 		<form id = "sign_menu" method = "post" >
